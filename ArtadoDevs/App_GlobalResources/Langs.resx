@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="1GBLimit" xml:space="preserve">
+    <value>Dosya büyüklüğü maksimum 1GB olmalıdır. </value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Onayla</value>
+  </data>
+  <data name="AccountSettings" xml:space="preserve">
+    <value>Hesap Ayarları</value>
+  </data>
+  <data name="APIDetails" xml:space="preserve">
+    <value>API Detayları</value>
+  </data>
+  <data name="APIName" xml:space="preserve">
+    <value>API adı*:</value>
+  </data>
+  <data name="APIs" xml:space="preserve">
+    <value>API'ler</value>
+  </data>
+  <data name="APIType" xml:space="preserve">
+    <value>API Türü*:</value>
+  </data>
+  <data name="AppDescription" xml:space="preserve">
+    <value>Uygulama açıklaması</value>
+  </data>
+  <data name="AppGenre" xml:space="preserve">
+    <value>Uygulama Türü*:</value>
+  </data>
+  <data name="AppLimit" xml:space="preserve">
+    <value>Artado Store Beta sürümünde sadece 5 uygulama yayınlamanıza izin verir. Uygulama yayınlama sınırına ulaştınız. Bağış yaparak daha fazla uygulama yayınlayabilirsiniz.</value>
+  </data>
+  <data name="ApplyForApp" xml:space="preserve">
+    <value>Uygulamanı Artado Store'da yayınlamak için başvur.</value>
+  </data>
+  <data name="ApplyForGame" xml:space="preserve">
+    <value>Oyununu Artado Store'da yayınlamak için başvur</value>
+  </data>
+  <data name="ApplyForProject" xml:space="preserve">
+    <value>Artado Search için geliştirdiğiniz temaları, eklentileri ve logoları yayınlamak için başvurabilirsiniz.</value>
+  </data>
+  <data name="ApplyForUpdate" xml:space="preserve">
+    <value>Güncellemeni Artado Store'da yayınlamak için başvur.</value>
+  </data>
+  <data name="AppName" xml:space="preserve">
+    <value>Uygulama adı*</value>
+  </data>
+  <data name="AppStatus" xml:space="preserve">
+    <value>Uygulama Durumu:</value>
+  </data>
+  <data name="AuthorName" xml:space="preserve">
+    <value>Yayıncı adı</value>
+  </data>
+  <data name="Banner" xml:space="preserve">
+    <value>Kapak fotoğrafı*:</value>
+  </data>
+  <data name="BannerLimit" xml:space="preserve">
+    <value>*Dosya büyüklüğü maksimum 1MB olmalıdır. Önerilen boyut 1.024x500</value>
+  </data>
+  <data name="BetaFAQFull" xml:space="preserve">
+    <value>Beta Hakkında Sorulan Sorular</value>
+  </data>
+  <data name="BetaFAQText1" xml:space="preserve">
+    <value>Buna tam bir cevap veremeyiz. Fakat bir kaç ay boyunca Artado Store betada kalacak.</value>
+  </data>
+  <data name="BetaFAQText2" xml:space="preserve">
+    <value>Beta süreci boyunca tüm ürünler sadece ücretsiz olarak paylaşılacak. Beta bittikten sonra ücretli bir şekilde ürününüzü yayınlayabileceksiniz.</value>
+  </data>
+  <data name="BetaFAQTitle1" xml:space="preserve">
+    <value>Beta süreci ne kadar sürecek?</value>
+  </data>
+  <data name="BetaFAQTitle2" xml:space="preserve">
+    <value>Artado Store'da ürünümü ücretli bir şekilde yayınlayabilir miyim?</value>
+  </data>
+  <data name="BetaUnpaidWarning" xml:space="preserve">
+    <value>Artado Store şu an beta sürecinde olduğundan uygulamanızı sadece ücretsiz olarak paylaşabilirsiniz.</value>
+  </data>
+  <data name="BetaWarning" xml:space="preserve">
+    <value>Artado Store şu an beta sürecinde olduğundan bu sayfa şu anda herkese açık değildir.</value>
+  </data>
+  <data name="Biography" xml:space="preserve">
+    <value>Hakkınızda</value>
+  </data>
+  <data name="CodeIncorrect" xml:space="preserve">
+    <value>Yanlış kod!</value>
+  </data>
+  <data name="Collections" xml:space="preserve">
+    <value>Koleksiyonlar</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>E-posta hesabınızı doğrulayın</value>
+  </data>
+  <data name="CreateAPI" xml:space="preserve">
+    <value>API Oluştur</value>
+  </data>
+  <data name="CreateAPILong" xml:space="preserve">
+    <value>Artado servislerinden projelerinde yararlanmak için API oluştur.</value>
+  </data>
+  <data name="CreateApp" xml:space="preserve">
+    <value>Uygulama Oluştur</value>
+  </data>
+  <data name="CreateGame" xml:space="preserve">
+    <value>Oyun Oluştur</value>
+  </data>
+  <data name="CreateProject" xml:space="preserve">
+    <value>Proje Oluştur</value>
+  </data>
+  <data name="CreateVersion" xml:space="preserve">
+    <value>Versiyon Oluştur</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Açıklama</value>
+  </data>
+  <data name="Donate" xml:space="preserve">
+    <value>Bağış yap</value>
+  </data>
+  <data name="DonateText" xml:space="preserve">
+    <value>Artado'ya bağış yaparak projelerimizi ayakta tutmamıza ve daha çok geliştirmemize yardımcı olabilirsiniz!</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Düzenle</value>
+  </data>
+  <data name="EMail" xml:space="preserve">
+    <value>E-posta</value>
+  </data>
+  <data name="EnterCode" xml:space="preserve">
+    <value>Kodu girin</value>
+  </data>
+  <data name="EnterVerificationCode" xml:space="preserve">
+    <value>E-postanıza gönderdiğimiz 6 haneli kodu girin.</value>
+  </data>
+  <data name="EnterVerifyCode" xml:space="preserve">
+    <value>Onay Kodunu Girin</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Etkinlikler</value>
+  </data>
+  <data name="ExtensionFile" xml:space="preserve">
+    <value>Dosya:</value>
+  </data>
+  <data name="ExtensionLimit" xml:space="preserve">
+    <value>Dosya büyüklüğü maksimum 1GB olmalıdır. ".css", ".js" veya resim dosyası yükleyin.</value>
+  </data>
+  <data name="ExtensionType" xml:space="preserve">
+    <value>Eklenti</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>SSS</value>
+  </data>
+  <data name="FAQFull" xml:space="preserve">
+    <value>Sıkça Sorulan Sorular</value>
+  </data>
+  <data name="FAQText1" xml:space="preserve">
+    <value>Artado Developers hesabı açarak ürününüzü Artado Store'da paylaşabilirsiniz.</value>
+  </data>
+  <data name="FAQText2" xml:space="preserve">
+    <value>Yaptığınız oyunları, uygulamaları, temaları ve Artado logolarını; Artado Store'da paylaşabilirsiniz.</value>
+  </data>
+  <data name="FAQText3" xml:space="preserve">
+    <value>Hayır. Artado Store'da ücretsiz şekilde 5 oyun ve 5 uygulama paylaşabilirsiniz. Yani toplamda 10 ürün paylaşabilirsiniz. Şu anda Artado Store beta sürecinde olduğundan 10'dan fazla ürün paylaşamazsınız. Beta süreci bittikten sonra da 10'dan fazla ürün paylaşmak için belli bir ücret ödemeniz gerekecek. Fakat tabi ki istisnalar yapılabilir. Beta sürecinde daha fazla ürün paylaşmak için bizimle iletişime geçebilirsiniz. Bu kısıtlama sadece oyun ve uygulamalarda geçerlidir. Workshop ürünlerinde(eklentiler, temalar, logolar) bu kısıtlama yoktur.</value>
+  </data>
+  <data name="FAQTitle1" xml:space="preserve">
+    <value>Ürünümü Artado Store'da nasıl paylaşabilirim?</value>
+  </data>
+  <data name="FAQTitle2" xml:space="preserve">
+    <value>Artado Store'da neler paylaşabilirim?</value>
+  </data>
+  <data name="FAQTitle3" xml:space="preserve">
+    <value>Artado Store'da ürünümü paylaşmak için para ödemeli miyim?</value>
+  </data>
+  <data name="FilesForAndroid" xml:space="preserve">
+    <value>Android için dosyalar:</value>
+  </data>
+  <data name="FilesForBSD" xml:space="preserve">
+    <value>BSD için dosyalar:</value>
+  </data>
+  <data name="FilesForHaiku" xml:space="preserve">
+    <value>Haiku için dosyalar:</value>
+  </data>
+  <data name="FilesForLinux" xml:space="preserve">
+    <value>Linux için dosyalar:</value>
+  </data>
+  <data name="FilesForMacOS" xml:space="preserve">
+    <value>MacOS için dosyalar:</value>
+  </data>
+  <data name="FilesForWindows" xml:space="preserve">
+    <value>Windows için dosyalar:</value>
+  </data>
+  <data name="FileTypeLinux" xml:space="preserve">
+    <value>*Dosya büyüklüğü maksimum 1GB olmalıdır. ".zip" veya Flatpak dosyası yükleyin.</value>
+  </data>
+  <data name="FileTypeMacOS" xml:space="preserve">
+    <value>*Dosya büyüklüğü maksimum 1GB olmalıdır. ".zip" veya ".dmg" dosyası yükleyin.</value>
+  </data>
+  <data name="FileTypeOther" xml:space="preserve">
+    <value>*Dosya büyüklüğü maksimum 1GB olmalıdır. ".zip" dosyası yükleyin.</value>
+  </data>
+  <data name="FileTypeWindows" xml:space="preserve">
+    <value>*Dosya büyüklüğü maksimum 1GB olmalıdır. ".zip" ve ".exe" dosyası yükleyin.</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>Ücretsiz</value>
+    <comment>as in "free beer"</comment>
+  </data>
+  <data name="GameDescription" xml:space="preserve">
+    <value>Oyun açıklaması:</value>
+  </data>
+  <data name="GameGenre" xml:space="preserve">
+    <value>Oyun türü:</value>
+  </data>
+  <data name="GameLimit" xml:space="preserve">
+    <value>Artado Store Beta sürümünde sadece 5 tane oyun yayınlamanıza izin verir. Oyun yayınlama sınırına ulaştınız. Bağış yaparak daha fazla oyun yayınlayabilirsiniz.</value>
+  </data>
+  <data name="GameName" xml:space="preserve">
+    <value>Oyun adı*:</value>
+  </data>
+  <data name="GameStatus" xml:space="preserve">
+    <value>Oyun Durumu:</value>
+  </data>
+  <data name="GenreAction" xml:space="preserve">
+    <value>Aksiyon</value>
+  </data>
+  <data name="GenreAdventure" xml:space="preserve">
+    <value>Macera</value>
+  </data>
+  <data name="GenreAnime" xml:space="preserve">
+    <value>Anime</value>
+  </data>
+  <data name="GenreArt" xml:space="preserve">
+    <value>Sanat</value>
+  </data>
+  <data name="GenreBooks" xml:space="preserve">
+    <value>Kitaplar</value>
+  </data>
+  <data name="GenreBusiness" xml:space="preserve">
+    <value>İş</value>
+  </data>
+  <data name="GenreCardGame" xml:space="preserve">
+    <value>Kart Oyunu</value>
+  </data>
+  <data name="GenreEducation" xml:space="preserve">
+    <value>Eğitim</value>
+  </data>
+  <data name="GenreEducational" xml:space="preserve">
+    <value>Eğitici</value>
+  </data>
+  <data name="GenreEntertainment" xml:space="preserve">
+    <value>Eğlence</value>
+  </data>
+  <data name="GenreFight" xml:space="preserve">
+    <value>Dövüş</value>
+  </data>
+  <data name="GenreFinance" xml:space="preserve">
+    <value>Finans</value>
+  </data>
+  <data name="GenreFood" xml:space="preserve">
+    <value>Yiyecekler</value>
+  </data>
+  <data name="GenreFriendship" xml:space="preserve">
+    <value>Arkadaşlık</value>
+  </data>
+  <data name="GenreHealth" xml:space="preserve">
+    <value>Sağlık</value>
+  </data>
+  <data name="GenreHorror" xml:space="preserve">
+    <value>Korku</value>
+  </data>
+  <data name="GenreMMO" xml:space="preserve">
+    <value>MMO</value>
+  </data>
+  <data name="GenreMusic" xml:space="preserve">
+    <value>Müzik</value>
+  </data>
+  <data name="GenreNews" xml:space="preserve">
+    <value>Haberler</value>
+  </data>
+  <data name="GenreNSFW" xml:space="preserve">
+    <value>NSFW</value>
+  </data>
+  <data name="GenreOther" xml:space="preserve">
+    <value>Diğer</value>
+  </data>
+  <data name="GenrePlatformer" xml:space="preserve">
+    <value>Platform</value>
+  </data>
+  <data name="GenrePuzzle" xml:space="preserve">
+    <value>Bulmaca</value>
+  </data>
+  <data name="GenreRacing" xml:space="preserve">
+    <value>Yarış</value>
+  </data>
+  <data name="GenreRPG" xml:space="preserve">
+    <value>RPG</value>
+  </data>
+  <data name="GenreSimulation" xml:space="preserve">
+    <value>Simülasyon</value>
+  </data>
+  <data name="GenreSocial" xml:space="preserve">
+    <value>Sosyal</value>
+  </data>
+  <data name="GenreSport" xml:space="preserve">
+    <value>Spor</value>
+  </data>
+  <data name="GenreStrategy" xml:space="preserve">
+    <value>Strateji</value>
+  </data>
+  <data name="GenreSurvival" xml:space="preserve">
+    <value>Hayatta Kalma</value>
+  </data>
+  <data name="GenreTools" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="GenreTravel" xml:space="preserve">
+    <value>Seyahat</value>
+  </data>
+  <data name="GenreVisualNovel" xml:space="preserve">
+    <value>Görsel Roman</value>
+  </data>
+  <data name="GenreWeather" xml:space="preserve">
+    <value>Hava durumu</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Ana Sayfa</value>
+  </data>
+  <data name="Images" xml:space="preserve">
+    <value>Görüntüler*:</value>
+  </data>
+  <data name="ImagesLimit" xml:space="preserve">
+    <value>*Dosya büyüklüğü maksimum 5MB olmalıdır. Minimum 1 dosya yüklemelisiniz. Maksimum 5 dosya yükleyebilirsiniz.</value>
+  </data>
+  <data name="IntroText1" xml:space="preserve">
+    <value>Artado Store ile oyununuzu veya uygulamanızı yayınlayın.</value>
+  </data>
+  <data name="IntroText2" xml:space="preserve">
+    <value>Sitenizi Artado veri tabanına ekleyin ve SEO ayarlarınızı kontrol edin.</value>
+  </data>
+  <data name="IntroText3" xml:space="preserve">
+    <value>Artado veya Nova için yaptığınız temaları ve logoları insanlarla paylaşın.</value>
+  </data>
+  <data name="IntroTitle1" xml:space="preserve">
+    <value>Ürününüzü paylaşın</value>
+  </data>
+  <data name="IntroTitle2" xml:space="preserve">
+    <value>Sitenizi kontrol edin</value>
+  </data>
+  <data name="IntroTitle3" xml:space="preserve">
+    <value>Sanatınızı paylaşın</value>
+  </data>
+  <data name="Join" xml:space="preserve">
+    <value>Katıl</value>
+  </data>
+  <data name="JoinDiscord" xml:space="preserve">
+    <value>Discord sunucumuza katılın</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Oturum Aç</value>
+  </data>
+  <data name="LoginText" xml:space="preserve">
+    <value>Artado Store'da ürün yayınlamaya devam etmek için hesabına giriş yapmalısın.</value>
+  </data>
+  <data name="LoginTitle" xml:space="preserve">
+    <value>Hesabına Giriş Yap</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Logo*:</value>
+  </data>
+  <data name="LogoLimit" xml:space="preserve">
+    <value>*Dosya büyüklüğü maksimum 1MB olmalıdır. Önerilen boyut 512x512</value>
+  </data>
+  <data name="LogoType" xml:space="preserve">
+    <value>Logo</value>
+  </data>
+  <data name="MyApplications" xml:space="preserve">
+    <value>Uygulamalarım</value>
+  </data>
+  <data name="MyGames" xml:space="preserve">
+    <value>Oyunlarım</value>
+  </data>
+  <data name="MyProjects" xml:space="preserve">
+    <value>Projelerim</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Parola</value>
+  </data>
+  <data name="ProjectDescription" xml:space="preserve">
+    <value>Proje açıklaması:</value>
+  </data>
+  <data name="ProjectName" xml:space="preserve">
+    <value>Proje adı*:</value>
+  </data>
+  <data name="ProjectType" xml:space="preserve">
+    <value>Proje Türü*:</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Yayınla</value>
+  </data>
+  <data name="PublishApp" xml:space="preserve">
+    <value>Uygulama Yayınla</value>
+  </data>
+  <data name="PublishGame" xml:space="preserve">
+    <value>Oyun Yayınla</value>
+  </data>
+  <data name="PublishProject" xml:space="preserve">
+    <value>Projeni Yayınla</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Kayıt ol</value>
+  </data>
+  <data name="RegisterText" xml:space="preserve">
+    <value>Artado Store'da ürününü paylaşmak için bir geliştirici hesabı oluşturmalısın.</value>
+  </data>
+  <data name="RegisterTitle" xml:space="preserve">
+    <value>Geliştirici Hesabı Oluştur</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Ara</value>
+  </data>
+  <data name="SendAgain" xml:space="preserve">
+    <value>Tekrar gönder</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="SourceCode" xml:space="preserve">
+    <value>Kaynak Kodu</value>
+  </data>
+  <data name="StatusBeta" xml:space="preserve">
+    <value>Beta</value>
+  </data>
+  <data name="StatusIndev" xml:space="preserve">
+    <value>Geliştirmede</value>
+  </data>
+  <data name="StatusRelease" xml:space="preserve">
+    <value>Yayında</value>
+  </data>
+  <data name="Support3OS" xml:space="preserve">
+    <value>3 veya daha fazla işletim sistemi destekleyen uygulamalar Artado Store'da daha çok öne çıkar!</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Takım</value>
+  </data>
+  <data name="ThemeType" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="TOSText" xml:space="preserve">
+    <value>Oturum açarak &lt;a style="color: #E74646" href="https://myacc.artado.xyz/tos"&gt;Kullanım Şartları&lt;/a&gt; ve &lt;a style="color: #E74646" href="https://myacc.artado.xyz/privacy"&gt;Gizlilik Politikasını&lt;/a&gt; kabul etmiş olursunuz.</value>
+  </data>
+  <data name="UpdateApp" xml:space="preserve">
+    <value>Uygulama Güncelle</value>
+  </data>
+  <data name="UpdateGame" xml:space="preserve">
+    <value>Oyun Güncelle</value>
+  </data>
+  <data name="UpdateProject" xml:space="preserve">
+    <value>Projeni Güncelle</value>
+  </data>
+  <data name="URL" xml:space="preserve">
+    <value>URL*:</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Kullanıcı adı</value>
+  </data>
+  <data name="UsernameOrEmailTaken" xml:space="preserve">
+    <value>Kullanıcı adı ya da e-posta zaten alınmış.</value>
+  </data>
+  <data name="VerificationCode" xml:space="preserve">
+    <value>Onay Kodu</value>
+  </data>
+  <data name="VerifyText" xml:space="preserve">
+    <value>E-posta hesabına gelen 6 haneli onay kodunu girin. Eğer kodu bulamazsanız spam ve çöp kutusunu kontrol etmeyi unutmayın.</value>
+  </data>
+  <data name="VersionNumber" xml:space="preserve">
+    <value>Versiyon numarası*</value>
+  </data>
+  <data name="Versions" xml:space="preserve">
+    <value>Sürümler</value>
+  </data>
+  <data name="WaitForUpdateApproval" xml:space="preserve">
+    <value>En son yayınladığınız sürüm onaylanmadan yeni sürüm yayınlayamazsınız.</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Web sitesi</value>
+  </data>
+  <data name="WelcomeText" xml:space="preserve">
+    <value>Artado Developers hesabı ile Artado Store'da uygulamanızı, oyununuzu ve sanatınızı insanlar ile paylaşabilirsiniz.</value>
+  </data>
+  <data name="YourAPIDetails" xml:space="preserve">
+    <value>API detaylarınız</value>
+  </data>
+</root>
