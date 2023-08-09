@@ -33,7 +33,7 @@ Follow these steps to set up the Artado Developers website on your local machine
 
 ### Prerequisites
 
-- [ASP.NET](https://dotnet.microsoft.com/apps/aspnet) Core SDK
+- [ASP.NET](https://dotnet.microsoft.com/apps/aspnet)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) or another compatible database
 
 ### Installation
