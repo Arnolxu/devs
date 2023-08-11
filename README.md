@@ -54,7 +54,7 @@ Follow these steps to set up the Artado Developers website on your local machine
 
 3. Configure the database connection in `web.config`:
 Copy the Web.example.config to Web.config and fill in the database parameters.
-   ```json
+   ```xml
    <connectionStrings>
 	  <add name="con" connectionString="" />
 	  <add name="admin" connectionString="" />
