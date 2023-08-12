@@ -24,7 +24,7 @@ The following behaviors are considered unacceptable in the Artado Developers pro
 
 ## Reporting Violations
 
-If you witness or experience any behavior that violates this Code of Conduct, please report it promptly. Violations can be reported by contacting the project maintainers at [contact@artado.com](mailto:arda@artadosearch.com). All reports will be reviewed and addressed in a confidential manner.
+If you witness or experience any behavior that violates this Code of Conduct, please report it promptly. Violations can be reported by contacting the project maintainers at [arda@artadosearch.com](mailto:arda@artadosearch.com). All reports will be reviewed and addressed in a confidential manner.
 
 ## Enforcement
 
