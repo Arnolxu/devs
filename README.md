@@ -94,4 +94,4 @@ This project is licensed under the [GNU Affero General Public License v3.0](LICE
 
 ---
 
-We appreciate your interest in Artado Developers. Together, we can shape an engaging platform for developers and users to connect and share their creative contributions. If you have any questions or feedback, feel free to [contact us](mailto:arda@artadosearch.com).
+We appreciate your interest in Artado Developers. Together, we can shape an engaging platform for developers and users to connect and share their creative contributions. If you have any questions or feedback, feel free to [contact us](mailto:support@artadosearch.com).
