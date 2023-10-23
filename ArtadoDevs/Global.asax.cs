@@ -27,6 +27,8 @@ namespace ArtadoDevs
             url.MapPageRoute("manage", "devs/panel/edit/{product}", "~/Panel/Panel.aspx");
             url.MapPageRoute("versions", "devs/panel/versions/{product}", "~/Panel/Panel.aspx");
             url.MapPageRoute("details", "devs/panel/details/{product}", "~/Panel/Panel.aspx");
+            url.MapPageRoute("admin", "devs/panel/admin", "~/Panel/Panel.aspx");
+            url.MapPageRoute("adminview", "devs/panel/admin/view/{version}", "~/Panel/Panel.aspx");
         }
         void Application_Start(object sender, EventArgs e)
         {

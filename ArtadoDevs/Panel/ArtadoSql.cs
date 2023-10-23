@@ -28,7 +28,7 @@ namespace ArtadoDevs
             cmd.CommandText = query;
             if(data_type == "string")
             {
-                var info = (string)cmd.ExecuteScalar();
+                var info = cmd.ExecuteScalar().ToString();
                 con.Close();
                 return info;
             }
@@ -71,7 +71,26 @@ namespace ArtadoDevs
             }
 
             //Update Infos
-            string query = "update  " + table + " set " + data + "='" + newdata + "' where " + where + "='" + there +"'";
+            string query = "update  " + table + " set " + data + "='" + newdata + "' where " + where + "='" + there + "'";
+            cmd.CommandText = query;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //SQL DELETE command
+        public static void Delete(string table, string where, string there, string constring)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = constring;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            //Update Infos
+            string query = "delete from  " + table + " where " + where + "='" + there + "'";
             cmd.CommandText = query;
             cmd.ExecuteNonQuery();
             con.Close();

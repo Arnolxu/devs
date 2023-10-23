@@ -100,7 +100,12 @@
                                 <span class="text nav-text"><asp:Literal runat="server" Text="<%$Resources:Langs, Settings%>" /></span>
                             </a>
                         </li>
-
+                        <li runat="server" class="nav-link" id="AdminNav">
+                            <a href="/devs/panel/admin">
+                                <i class="bi bi-wrench icon"></i>
+                                <span class="text nav-text"><asp:Literal runat="server" Text="<%$Resources:Langs, AdminPanel%>" /></span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -199,6 +204,12 @@
                             <a href="/devs/panel/settings">
                                 <i class="bi bi-gear icon"></i>
                                 <span class="text nav-text"><asp:Literal runat="server" Text="<%$Resources:Langs, Settings%>" /></span>
+                            </a>
+                        </li>
+                        <li runat="server" class="nav-link" id="AdminNavMobile">
+                            <a href="/devs/panel/admin">
+                                <i class="bi bi-wrench icon"></i>
+                                <span class="text nav-text"><asp:Literal runat="server" Text="<%$Resources:Langs, AdminPanel%>" /></span>
                             </a>
                         </li>
 
@@ -616,6 +627,44 @@
                      <asp:Label id="warn_v" runat="server" Text="<%$Resources:Langs, CodeIncorrect%>" Font-Size="Small" ForeColor="#E74646" Style="display:block; margin-top:50px; margin-bottom: 20px;"></asp:Label>
                 </div>
             </div>
+
+            <%--Admin Panel--%>
+            <div id="AdminPanel" runat="server" class="products">
+                <div id="Div2" runat="server" style="font-size:22px; margin-left: 20px;"><asp:Literal runat="server" Text="<%$Resources:Langs, AdminPanel%>" /></div>
+                <asp:Repeater runat="server" ID="WaitingRepeater">
+                    <ItemTemplate>
+                        <a href='/devs/panel/admin/view/<%# Eval("ID") %>' class="pro_link">
+                            <div class="product_row">
+                                <asp:Image ID="ver_image" runat="server" class="logo"/>
+                                <div class="row_info">
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("VersionNum") %>' Font-Size="X-Large"></asp:Label>
+                                    <asp:Label ID="Label2" runat="server" Font-Size="Medium" ForeColor="Gray"></asp:Label>
+                                    <asp:Label ID="Label3" runat="server" Font-Size="Medium" ForeColor="Gray">WID: <asp:Literal ID="ProdID" runat="server" Text='<%# Eval("ProductID") %>'></asp:Literal></asp:Label>
+                                </div>               
+                            </div>
+                        </a>
+                    </ItemTemplate>
+                </asp:Repeater>
+           </div>
+
+            <%--Version Approving Panel--%>
+            <div id="AdminViewPanel" runat="server" class="products">
+                <asp:Button ID="AdminReject" runat="server" Text="<%$Resources:Langs, Reject%>" class="more" style="float:right;  margin-top: 10px !important" OnClick="AdminRejectVer"/>
+                <asp:Button ID="AdminAccept" runat="server" Text="<%$Resources:Langs, Accept%>" class="more" style="float:right;  margin-top: 10px !important" OnClick="AdminAcceptVer"/>
+                <div id="Div3" runat="server" style="font-size:22px; margin-left: 20px;"><asp:Literal runat="server" Text="<%$Resources:Langs, ViewPendingVersion%>" /></div>
+                <img id="viewimg" runat="server" style="float: left; width: 150px; height: 150px; margin-right: 50px;" src="#" />
+                <asp:Label ID="viewtitle" runat="server" Text="Name" CssClass="p_name"></asp:Label> <asp:Label ID="viewver" runat="server" Font-Size="Medium" ForeColor="Gray"></asp:Label> <br />
+                <asp:Label ID="viewdesc" runat="server" Font-Size="Medium" ForeColor="Gray"></asp:Label> <br />
+                <asp:Label ID="viewwid" runat="server" Font-Size="Medium" ForeColor="Gray">WID: <asp:Literal ID="ViewProdID" runat="server"></asp:Literal></asp:Label> <br />
+                <asp:Label ID="viewdev" runat="server" Font-Size="Medium" ForeColor="Gray"><asp:Literal ID="Literal1" runat="server" Text="<%$Resources:Langs, Developer%>"></asp:Literal>: <asp:Literal ID="ViewDeveloper" runat="server"></asp:Literal></asp:Label> <br />
+                <asp:Label ID="viewtype" runat="server" Font-Size="Medium" ForeColor="Gray"><asp:Literal ID="Literal2" runat="server" Text="<%$Resources:Langs, Type%>"></asp:Literal>: <asp:Literal ID="ViewProdType" runat="server"></asp:Literal></asp:Label> <br />
+                <asp:HyperLink ID="ViewContent" runat="server" Text="<%$Resources:Langs, Content%>"></asp:HyperLink> <br />
+                <img id="Preview1" runat="server" src="#" style="max-width: 100%;" /> <br /><br />
+                <img id="Preview2" runat="server" src="#" style="max-width: 100%;" /> <br /><br />
+                <img id="Preview3" runat="server" src="#" style="max-width: 100%;" /> <br /><br />
+                <img id="Preview4" runat="server" src="#" style="max-width: 100%;" /> <br /><br />
+                <img id="Preview5" runat="server" src="#" style="max-width: 100%;" />
+           </div>
             
             <%--Beta Warning--%>
             <div id="Soon" runat="server" class="products">

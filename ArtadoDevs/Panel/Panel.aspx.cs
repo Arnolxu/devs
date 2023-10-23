@@ -8,6 +8,7 @@ using System.Net;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace ArtadoDevs.Panel
@@ -52,10 +53,41 @@ namespace ArtadoDevs.Panel
                         connect.Open();
                     }
 
+                    share_app.Visible = false;
+                    share_game.Visible = false;
+                    main.Visible = false;
+                    apps.Visible = false;
+                    games.Visible = false;
+                    showcase.Visible = false;
+                    nomoregame.Visible = false;
+                    apis.Visible = false;
+                    settings.Visible = false;
+                    Workshop.Visible = false;
+                    AdminPanel.Visible = false;
+
+                    danger_panel.Visible = false;
+                    gamedanger_panel.Visible = false;
+                    project_upload.Visible = false;
+                    nomore.Visible = false;
+                    Soon.Visible = false;
+                    ver_con.Visible = false;
+                    nomore_ver.Visible = false;
+                    AdminViewPanel.Visible = false;
+
+                    AdminNav.Visible = false;
+                    AdminNavMobile.Visible = false;
+
                     string url = Request.RawUrl;
                     string product;
                     int edit = url.IndexOf("/edit/");
                     int vercon = url.IndexOf("/versions/");
+                    int adminview = url.IndexOf("/view/");
+                    string isAdmin = ArtadoSql.Select("IsAdmin", "Devs", "PassID", EncryptClass.Decrypt(id.Value), con, "string");
+                    if (isAdmin == "true")
+                    {
+                        AdminNav.Visible = true;
+                        AdminNavMobile.Visible = true;
+                    }
                     // int details = url.IndexOf("/details/");
 
                     SqlCommand control = new SqlCommand("select Name from artadoco_admin.Devs where PassID='" + EncryptClass.Decrypt(id.Value.Replace("'", "\'").Replace('"', '\"')) + "'", connect);
@@ -78,25 +110,8 @@ namespace ArtadoDevs.Panel
                                 switch (type)
                                 {
                                     case "App":
-                                        Apps_Data.Visible = false;
-                                        appstext.Visible = false;
-                                        Button1.Visible = false;
-                                        main.Visible = false;
                                         apps.Visible = true;
-                                        apis.Visible = false;
-                                        showcase.Visible = false;
-                                        games.Visible = false;
-                                        settings.Visible = false;
-
                                         share_app.Visible = true;
-                                        share_game.Visible = false;
-                                        danger_panel.Visible = false;
-                                        appupload.Visible = false;
-                                        nomore.Visible = false;
-
-                                        Soon.Visible = false;
-                                        ver_con.Visible = false;
-                                        Workshop.Visible = false;
 
                                         Button11.Attributes.Add("style", "margin-top: 5px !important");
                                         Button12.Attributes.Add("style",
@@ -125,23 +140,7 @@ namespace ArtadoDevs.Panel
                                         Game_Data.Visible = false;
                                         gamestext.Visible = false;
                                         Button2.Visible = false;
-
-                                        share_app.Visible = false;
                                         share_game.Visible = true;
-                                        main.Visible = false;
-                                        apps.Visible = false;
-                                        showcase.Visible = false;
-                                        nomoregame.Visible = false;
-                                        apis.Visible = false;
-                                        settings.Visible = false;
-
-                                        danger_panel.Visible = false;
-                                        gamedanger_panel.Visible = false;
-                                        project_upload.Visible = false;
-                                        nomore.Visible = false;
-                                        Soon.Visible = false;
-                                        ver_con.Visible = false;
-                                        Workshop.Visible = false;
 
                                         Button11.Attributes.Add("style", "margin-top: 5px !important");
                                         Button12.Attributes.Add("style",
@@ -167,23 +166,6 @@ namespace ArtadoDevs.Panel
                                         DropDownList2.SelectedValue = status;
                                         break;
                                     case "Workshop":
-                                        share_app.Visible = false;
-                                        share_game.Visible = false;
-                                        main.Visible = false;
-                                        apps.Visible = false;
-                                        showcase.Visible = false;
-                                        nomoregame.Visible = false;
-                                        apis.Visible = false;
-                                        settings.Visible = false;
-                                        games.Visible = false;
-                                        p_upload.Visible = false;
-
-                                        danger_panel.Visible = false;
-                                        gamedanger_panel.Visible = false;
-                                        project_upload.Visible = false;
-                                        nomore.Visible = false;
-                                        Soon.Visible = false;
-                                        ver_con.Visible = false;
                                         Workshop.Visible = true;
 
                                         workshop_projects.Visible = false;
@@ -232,24 +214,7 @@ namespace ArtadoDevs.Panel
                         {
                             if (!IsPostBack)
                             {
-                                share_app.Visible = false;
-                                share_game.Visible = false;
-                                main.Visible = false;
-                                apps.Visible = false;
-                                games.Visible = false;
-                                showcase.Visible = false;
-                                nomoregame.Visible = false;
-                                apis.Visible = false;
-                                settings.Visible = false;
-                                Workshop.Visible = false;
-
-                                danger_panel.Visible = false;
-                                gamedanger_panel.Visible = false;
-                                project_upload.Visible = false;
-                                nomore.Visible = false;
-                                Soon.Visible = false;
                                 ver_con.Visible = true;
-                                nomore_ver.Visible = false;
 
                                 Button11.Attributes.Add("style", "background-color: transparent; margin-top: 5px !important");
                                 Button12.Attributes.Add("style", "margin-top: 5px !important");
@@ -274,74 +239,115 @@ namespace ArtadoDevs.Panel
                                 }
                             }
                         }
+                        else if (adminview >= 1 && isAdmin == "true")
+                        {
+                            if (!IsPostBack)
+                            {
+                                AdminViewPanel.Visible = true;
+
+                                string version = RouteData.Values["version"].ToString();
+                                string id = ArtadoSql.SelectInt("ProductID", "Versions", "ID", version, con).ToString();
+                                string img_path = ArtadoSql.Select("Logo", "Products", "ID", id, con, "string");
+                                viewimg.Src = "/Upload/Images/" + img_path;
+                                string title = ArtadoSql.Select("Name", "Products", "ID", id, con, "string");
+                                viewtitle.Text = title;
+                                string desc = ArtadoSql.Select("Description", "Products", "ID", id, con, "string");
+                                viewdesc.Text = desc;
+                                ViewProdID.Text = id;
+                                string dev = ArtadoSql.Select("Developer", "Products", "ID", id, con, "string");
+                                ViewDeveloper.Text = dev;
+                                string vers = ArtadoSql.Select("VersionNum", "Versions", "ID", version, con, "string");
+                                viewver.Text = vers;
+                                string type = ArtadoSql.Select("Type", "Products", "ID", id, con, "string");
+                                if (type == "Workshop")
+                                {
+                                    type = ArtadoSql.Select("Genre", "Products", "ID", id, con, "string");
+                                }
+                                ViewProdType.Text = type;
+                                string content = ArtadoSql.Select("Path", "Versions", "ID", version, con, "string");
+                                ViewContent.NavigateUrl = content;
+
+                                string previmg1 = ArtadoSql.Select("Image1", "Products", "ID", id, con, "string");
+                                if (previmg1 != string.Empty)
+                                {
+                                    Preview1.Src = "/Upload/Images/" + previmg1;
+                                }
+                                else
+                                {
+                                    Preview1.Visible = false;
+                                }
+                                var previmg2 = ArtadoSql.Select("Image2", "Products", "ID", id, con, "string");
+                                if (previmg2 != string.Empty)
+                                {
+                                    Preview2.Src = "/Upload/Images/" + previmg2;
+                                }
+                                else
+                                {
+                                    Preview2.Visible = false;
+                                }
+                                var previmg3 = ArtadoSql.Select("Image3", "Products", "ID", id, con, "string");
+                                if (previmg3 != string.Empty)
+                                {
+                                    Preview3.Src = previmg3;
+                                }
+                                else
+                                {
+                                    Preview3.Visible = false;
+                                }
+                                var previmg4 = ArtadoSql.Select("Image4", "Products", "ID", id, con, "string");
+                                if (previmg4 != string.Empty)
+                                {
+                                    Preview4.Src = previmg4;
+                                }
+                                else
+                                {
+                                    Preview4.Visible = false;
+                                }
+                                var previmg5 = ArtadoSql.Select("Image5", "Products", "ID", id, con, "string");
+                                if (previmg5 != string.Empty)
+                                {
+                                    Preview5.Src = previmg5;
+                                }
+                                else
+                                {
+                                    Preview5.Visible = false;
+                                }
+
+                            }
+                        }
                         else
                         {
                             if (url == "/devs/panel")
                             {
                                 main.Visible = true;
-                                apps.Visible = false;
-                                apis.Visible = false;
                                 showcase.Visible = true;
-                                games.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
-
-                                Soon.Visible = false;
 
                                 GetProduct.Products(Projects, "all", EncryptClass.Decrypt(id.Value));
                             }
                             else if (url == "/devs/panel/apps")
                             {
-                                main.Visible = false;
                                 apps.Visible = true;
-                                apis.Visible = false;
-                                showcase.Visible = false;
-                                games.Visible = false;
-                                nomore.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
 
                                 share_app.Visible = false;
                                 share_game.Visible = false;
                                 danger_panel.Visible = false;
-
-                                Soon.Visible = false;
+                                shareproject.Visible = false;
 
                                 GetProduct.Products(Apps_Data, "App", EncryptClass.Decrypt(id.Value));
                             }
                             else if (url == "/devs/panel/games")
                             {
-                                main.Visible = false;
-                                apps.Visible = false;
-                                apis.Visible = false;
-                                showcase.Visible = false;
                                 games.Visible = true;
-                                nomoregame.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
 
                                 share_app.Visible = false;
                                 share_game.Visible = false;
                                 gamedanger_panel.Visible = false;
 
-                                Soon.Visible = false;
-
                                 GetProduct.Products(Game_Data, "Game", EncryptClass.Decrypt(id.Value));
                             }
                             else if (url == "/devs/panel/sites")
                             {
-                                main.Visible = false;
-                                apps.Visible = false;
-                                apis.Visible = false;
-                                showcase.Visible = false;
-                                games.Visible = false;
-                                nomoregame.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
+                                Soon.Visible = true;
 
                                 share_app.Visible = false;
                                 share_game.Visible = false;
@@ -351,14 +357,6 @@ namespace ArtadoDevs.Panel
                             }
                             else if (url == "/devs/panel/workshop")
                             {
-                                main.Visible = false;
-                                apps.Visible = false;
-                                apis.Visible = false;
-                                showcase.Visible = false;
-                                games.Visible = false;
-                                nomoregame.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
                                 Workshop.Visible = true;
 
                                 share_app.Visible = false;
@@ -366,42 +364,21 @@ namespace ArtadoDevs.Panel
                                 gamedanger_panel.Visible = false;
                                 shareproject.Visible = false;
 
-                                Soon.Visible = false;
-
                                 GetProduct.Products(workshop_projects, "Workshop", EncryptClass.Decrypt(id.Value));
                             }
                             else if (url == "/devs/panel/api")
                             {
-                                main.Visible = false;
-                                apps.Visible = false;
                                 apis.Visible = true;
-                                showcase.Visible = false;
-                                games.Visible = false;
-                                nomoregame.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
 
                                 share_app.Visible = false;
                                 share_game.Visible = false;
-                                api_create.Visible = false;
-                                APIdanger.Visible = false;
-
-                                Soon.Visible = false;
+                                gamedanger_panel.Visible = false;
 
                                 GetProduct.APIs(API_Data, "all", EncryptClass.Decrypt(id.Value));
                             }
                             else if (url == "/devs/panel/events")
                             {
-                                main.Visible = false;
-                                apps.Visible = false;
-                                apis.Visible = false;
-                                showcase.Visible = false;
-                                games.Visible = false;
-                                nomoregame.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
+                                Soon.Visible = true;
 
                                 share_app.Visible = false;
                                 share_game.Visible = false;
@@ -411,52 +388,25 @@ namespace ArtadoDevs.Panel
                             }
                             else if (url == "/devs/panel/collections")
                             {
-                                main.Visible = false;
-                                apps.Visible = false;
-                                apis.Visible = false;
-                                showcase.Visible = false;
-                                games.Visible = false;
-                                nomoregame.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
+                                Soon.Visible = true;
 
                                 share_app.Visible = false;
                                 share_game.Visible = false;
                                 gamedanger_panel.Visible = false;
-
-                                Soon.Visible = true;
                             }
                             else if (url == "/devs/panel/team")
                             {
-                                main.Visible = false;
-                                apps.Visible = false;
-                                apis.Visible = false;
-                                showcase.Visible = false;
-                                games.Visible = false;
-                                settings.Visible = false;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
+                                Soon.Visible = true;
 
                                 nomoregame.Visible = false;
 
                                 share_app.Visible = false;
                                 share_game.Visible = false;
                                 gamedanger_panel.Visible = false;
-
-                                Soon.Visible = true;
                             }
                             else if (url == "/devs/panel/settings")
                             {
-                                main.Visible = false;
-                                apps.Visible = false;
-                                apis.Visible = false;
-                                showcase.Visible = false;
-                                games.Visible = false;
-                                nomoregame.Visible = false;
                                 settings.Visible = true;
-                                ver_con.Visible = false;
-                                Workshop.Visible = false;
 
                                 share_app.Visible = false;
                                 share_game.Visible = false;
@@ -464,8 +414,6 @@ namespace ArtadoDevs.Panel
                                 Panel1.Visible = false;
                                 valid.Visible = false;
                                 warn_v.Visible = false;
-
-                                Soon.Visible = false;
 
                                 //Get the account credits
                                 att.Visible = false;
@@ -497,6 +445,32 @@ namespace ArtadoDevs.Panel
                                 username.Attributes.Add("Value", user.Trim());
 
                                 connect.Close();
+                            }
+                            else if (url == "/devs/panel/admin")
+                            {
+                                if (isAdmin == "true")
+                                {
+                                    AdminPanel.Visible = true;
+
+                                    GetProduct.Waiting(WaitingRepeater);
+
+                                    for (int i = 0; i < WaitingRepeater.Items.Count; i++)
+                                    {
+                                        Image img = WaitingRepeater.Items[i].FindControl("ver_image") as Image;
+                                        string L3 = ((Literal)WaitingRepeater.Items[i].FindControl("ProdID")).Text;
+
+                                        string img_path = ArtadoSql.Select("Logo", "Products", "ID", L3, con, "string");
+                                        img.ImageUrl = "/Upload/Images/" + img_path;
+
+                                        Label gamename = WaitingRepeater.Items[i].FindControl("Label2") as Label;
+                                        string game = ArtadoSql.Select("Name", "Products", "ID", L3, con, "string");
+                                        gamename.Text = game;
+                                    }
+                                }
+                                else
+                                {
+                                    Response.Redirect("/devs/panel");
+                                }
                             }
                             else
                             {
@@ -1303,6 +1277,36 @@ namespace ArtadoDevs.Panel
             Lang.Culture();
 
             base.InitializeCulture();
+        }
+        protected void AdminAcceptVer(object sender, EventArgs e)
+        {
+            string version = RouteData.Values["version"].ToString();
+            string id = ArtadoSql.SelectInt("ProductID", "Versions", "ID", version, con).ToString();
+            ArtadoSql.Update("Status", "Approved", "Versions", "ID", version, con);
+            ArtadoSql.Update("AppStatus", "Approved", "Products", "ID", id, con);
+        }
+        protected void AdminRejectVer(object sender, EventArgs e)
+        {
+            string version = RouteData.Values["version"].ToString();
+            string id = ArtadoSql.SelectInt("ProductID", "Versions", "ID", version, con).ToString();
+            ArtadoSql.Update("AppStatus", "Rejected", "Products", "ID", id, con);
+
+
+            string filePath = ArtadoSql.Select("Path", "Versions", "ID", version, con, "string").Substring(1).Replace("/", "\\");
+            filePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filePath));
+            System.Diagnostics.Debug.WriteLine(filePath);
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+                System.Diagnostics.Debug.WriteLine("deleted");
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("doesn't exist");
+            }
+
+            ArtadoSql.Delete("Versions", "ID", version, con);
         }
     }
 }

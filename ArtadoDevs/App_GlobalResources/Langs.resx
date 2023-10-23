@@ -126,6 +126,9 @@
   <data name="AccountSettings" xml:space="preserve">
     <value>Hesap Ayarları</value>
   </data>
+  <data name="AdminPanel" xml:space="preserve">
+    <value>Yönetici Paneli</value>
+  </data>
   <data name="APIDetails" xml:space="preserve">
     <value>API Detayları</value>
   </data>
@@ -207,6 +210,9 @@
   <data name="ConfirmEmail" xml:space="preserve">
     <value>E-posta hesabınızı doğrulayın</value>
   </data>
+  <data name="Content" xml:space="preserve">
+    <value>İçerik</value>
+  </data>
   <data name="CreateAPI" xml:space="preserve">
     <value>API Oluştur</value>
   </data>
@@ -227,6 +233,9 @@
   </data>
   <data name="Description" xml:space="preserve">
     <value>Açıklama</value>
+  </data>
+  <data name="Developer" xml:space="preserve">
+    <value>Geliştirici</value>
   </data>
   <data name="Donate" xml:space="preserve">
     <value>Bağış yap</value>
@@ -529,6 +538,9 @@
   <data name="RegisterTitle" xml:space="preserve">
     <value>Geliştirici Hesabı Oluştur</value>
   </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Reddet</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Kaydet</value>
   </data>
@@ -565,6 +577,9 @@
   <data name="TOSText" xml:space="preserve">
     <value>Oturum açarak &lt;a style="color: #E74646" href="https://myacc.artado.xyz/tos"&gt;Kullanım Şartları&lt;/a&gt; ve &lt;a style="color: #E74646" href="https://myacc.artado.xyz/privacy"&gt;Gizlilik Politikasını&lt;/a&gt; kabul etmiş olursunuz.</value>
   </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tür</value>
+  </data>
   <data name="UpdateApp" xml:space="preserve">
     <value>Uygulama Güncelle</value>
   </data>
@@ -594,6 +609,9 @@
   </data>
   <data name="Versions" xml:space="preserve">
     <value>Sürümler</value>
+  </data>
+  <data name="ViewPendingVersion" xml:space="preserve">
+    <value>Beklemedeki Versiyonu Görüntüle</value>
   </data>
   <data name="WaitForUpdateApproval" xml:space="preserve">
     <value>En son yayınladığınız sürüm onaylanmadan yeni sürüm yayınlayamazsınız.</value>

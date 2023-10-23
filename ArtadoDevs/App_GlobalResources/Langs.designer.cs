@@ -79,6 +79,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Yönetici Paneli benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string AdminPanel {
+            get {
+                return ResourceManager.GetString("AdminPanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   API Detayları benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string APIDetails {
@@ -322,6 +331,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   İçerik benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string Content {
+            get {
+                return ResourceManager.GetString("Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   API Oluştur benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string CreateAPI {
@@ -381,6 +399,15 @@ namespace Resources {
         internal static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Geliştirici benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string Developer {
+            get {
+                return ResourceManager.GetString("Developer", resourceCulture);
             }
         }
         
@@ -1285,6 +1312,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Reddet benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string Reject {
+            get {
+                return ResourceManager.GetString("Reject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Kaydet benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string Save {
@@ -1393,6 +1429,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Tür benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string Type {
+            get {
+                return ResourceManager.GetString("Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Uygulama Güncelle benzeri yerelleştirilmiş bir dize arar.
         /// </summary>
         internal static string UpdateApp {
@@ -1479,6 +1524,15 @@ namespace Resources {
         internal static string Versions {
             get {
                 return ResourceManager.GetString("Versions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Beklemedeki Versiyonu Görüntüle benzeri yerelleştirilmiş bir dize arar.
+        /// </summary>
+        internal static string ViewPendingVersion {
+            get {
+                return ResourceManager.GetString("ViewPendingVersion", resourceCulture);
             }
         }
         

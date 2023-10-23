@@ -104,5 +104,21 @@ namespace ArtadoDevs
             DataProduct.DataSource = dt;
             DataProduct.DataBind();
         }
+
+        //List top 30 waiting versions
+        public static void Waiting(Repeater DataProduct)
+        {
+            //Connection Strings
+            string con = System.Configuration.ConfigurationManager.ConnectionStrings["admin"].ConnectionString.ToString();
+
+            //Setting Sql Connection
+            SqlConnection baglanti = new SqlConnection(con);
+
+            SqlDataAdapter adp = new SqlDataAdapter("select top(30) * from artadoco_admin.Versions where Status='Waiting' order by ID desc", baglanti);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            DataProduct.DataSource = dt;
+            DataProduct.DataBind();
+        }
     }
 }
