@@ -12,7 +12,7 @@ namespace ArtadoDevs
     {
         public static string Encrypt(string clearText)
         {
-            string EncryptionKey = "key";
+            string EncryptionKey = System.Configuration.ConfigurationManager.AppSettings["EncryptionKey"].ToString();
             byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
             using (Aes encryptor = Aes.Create())
             {
@@ -34,7 +34,7 @@ namespace ArtadoDevs
 
         public static string Decrypt(string cipherText)
         {
-            string EncryptionKey = "key";
+            string EncryptionKey = System.Configuration.ConfigurationManager.AppSettings["EncryptionKey"].ToString();
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             using (Aes encryptor = Aes.Create())
             {
@@ -56,7 +56,7 @@ namespace ArtadoDevs
 
         public static void FileEncrypt(string inputFilePath, string outputfilePath)
         {
-            string EncryptionKey = "key";
+            string EncryptionKey = System.Configuration.ConfigurationManager.AppSettings["EncryptionKey"].ToString();
             using (Aes encryptor = Aes.Create())
             {
                 Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
