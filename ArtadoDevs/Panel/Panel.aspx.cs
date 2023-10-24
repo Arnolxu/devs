@@ -27,6 +27,9 @@ namespace ArtadoDevs.Panel
         //Mail
         static string mail;
 
+        //Bio
+        static string desc;
+
         //Profile Pic
         string image;
 
@@ -443,6 +446,15 @@ namespace ArtadoDevs.Panel
                                 cmd.CommandText = query;
                                 user = (string)cmd.ExecuteScalar();
                                 username.Attributes.Add("Value", user.Trim());
+
+                                if (!IsPostBack)
+                                {
+                                    //Get the biography
+                                    query = "SELECT Description FROM Devs where PassID='" + EncryptClass.Decrypt(id.Value.Replace('"', '\"')) + "' ";
+                                    cmd.CommandText = query;
+                                    desc = (string)cmd.ExecuteScalar();
+                                    bio.Value = HttpUtility.HtmlDecode(desc);
+                                }
 
                                 connect.Close();
                             }
@@ -1232,10 +1244,8 @@ namespace ArtadoDevs.Panel
                 ArtadoSql.Update("Password", pwdHashed, "Devs", "PassID", EncryptClass.Decrypt(id.Value), con);
             }
 
-            if (bio.Value != string.Empty)
-            {
-                ArtadoSql.Update("Bio", bio.Value, "Devs", "PassID", EncryptClass.Decrypt(id.Value), con);
-            }
+            ArtadoSql.Update("Description", HttpUtility.HtmlEncode(bio.Value), "Devs", "PassID", EncryptClass.Decrypt(id.Value), con);
+            System.Diagnostics.Debug.WriteLine(HttpUtility.HtmlEncode(bio.Value));
         }
 
         protected void Resend(object sender, EventArgs e)
