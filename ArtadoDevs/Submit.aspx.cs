@@ -356,6 +356,7 @@ namespace ArtadoDevs
                 l_button.Visible = false;
                 a_button.Visible = true;
                 re_button.Visible = true;
+                login.Visible = false;
             }
         }
 
@@ -390,6 +391,7 @@ namespace ArtadoDevs
             {
                 Uyarı.Text = "Kod yanlış. Lütfen tekrar deneyiniz!";
                 register.Visible = false;
+                login.Visible = false;
                 Mail_Onay.Visible = true;
                 r_button.Visible = false;
                 l_button.Visible = false;
